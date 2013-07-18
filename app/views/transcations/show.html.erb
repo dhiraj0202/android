@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Amount:</b>
+  <%= @transcation.amount %>
+</p>
+
+
+<p>
+  <b>Title:</b>
+  <%= @transcation.title %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_transcation_path(@transcation) %> |
+<%= link_to 'Back', transcations_path %>

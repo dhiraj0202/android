@@ -1,0 +1,52 @@
+<h1>Listing transcations</h1>
+
+<table>
+  <tr>
+    <th>Amount</th>
+    <th></th>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transcations.each do |transcation| %>
+  <tr>
+    <td><%= transcation.amount %></td>
+    
+    <td><%= transcation.title %></td>
+    
+    <td><%= link_to 'Show', transcation %></td>
+    <td><%= link_to 'Edit', edit_transcation_path(transcation) %></td>
+    <td><%= link_to 'Destroy', transcation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+
+<tr>
+    <th>Transcation_amount</th>
+    <th></th>
+    <th>date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+
+
+<% @transaction_sums.each do |transaction_sum| %>
+  <tr>
+    <td><%= transaction_sum.amount %></td>
+    
+    <td><%= transaction_sum.created_at %></td>
+    
+    
+  </tr>
+  <br />
+<% end %>
+
+
+
+
+<%= link_to 'New Transcation', new_transcation_path %>

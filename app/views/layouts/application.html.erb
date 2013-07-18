@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TranscationDemo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if !user_signed_in? %>
+		<%= link_to "sign_in" , new_user_session_path%>
+	<% else %>
+		<%= link_to "sign_out" , destroy_user_session_path,:method => :delete %>
+	<% end %>
+
+<%= yield %>
+
+</body>
+</html>
